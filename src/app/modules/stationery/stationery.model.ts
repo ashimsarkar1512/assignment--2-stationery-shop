@@ -35,10 +35,16 @@ const productSchema = new Schema<Product>(
     inStock: {
       type: Boolean,
       default: true,
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false,
+      required: false,
     }
   },
   {
     timestamps: true,
+    versionKey:false
   });
 
-export const ProductModel = model<Product>('Product', productSchema,'stationery_products');
+export const ProductModel = model<Product>('Product', productSchema);

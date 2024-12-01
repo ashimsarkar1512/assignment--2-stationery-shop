@@ -3,8 +3,7 @@ import { ProductController } from './stationery.controller';
 
 const router = express.Router();
 
-router.post('/create-product', ProductController.createProduct);
-
+router.post('/', ProductController.createProduct);
 router.get('/', ProductController.getAllProducts);
 router.get('/:productId', ProductController.getSingleProducts);
 router.put('/:productId', ProductController.updateProduct);

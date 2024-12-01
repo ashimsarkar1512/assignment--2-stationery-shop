@@ -10,9 +10,8 @@ const getAllProductFromDB = async () => {
   const result = await ProductModel.find();
   return result;
 };
-const getSingleProductFromDB = async (productId:string) => {
-  const result = await ProductModel.findOne({ _id:productId });
-  console.log(result,productId);
+const getSingleProductFromDB = async (productId: string) => {
+  const result = await ProductModel.findOne({ _id: productId });
   return result;
 };
 
@@ -25,11 +24,11 @@ const updateAProductService = async (productId: string, updateData: Product) => 
 
     return updatedProduct;
   } catch (error) {
-    throw new Error(`Failed to update product: ${error.message}`);
+    // throw new Error(`Failed to update product: ${error.message}`);
   }
 };
-const deleteProductFromDB = async (productId:string) => {
-  const result = await ProductModel.deleteOne({ _id:productId });
+const deleteProductFromDB = async (productId: string) => {
+  const result = await ProductModel.updateOne({ _id: productId }, { isDeleted: true });
   return result;
 };
 
@@ -39,5 +38,5 @@ export const ProductServices = {
   getSingleProductFromDB,
   deleteProductFromDB,
   updateAProductService
- 
+
 };
