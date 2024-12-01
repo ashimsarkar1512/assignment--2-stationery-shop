@@ -9,11 +9,12 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/v1/products', ProductRoutes);
-app.use('/api/v1/orders',orderRoutes);
+app.use('/api/products', ProductRoutes);
+app.use('/api/orders',orderRoutes);
 
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
-export default app;
+
+export default app; 

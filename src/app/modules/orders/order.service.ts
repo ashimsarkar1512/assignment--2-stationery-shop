@@ -33,6 +33,7 @@ const calculateRevenue = async ()=> {
                       
                     
                       const result = await OrderModel.aggregate(pipeline);
+                      console.log(result);
                       }
 
 export const OrderServices = {

@@ -1,22 +1,27 @@
 import { Request, Response } from 'express';
 import { OrderServices } from './order.service';
+import { ProductServices } from '../stationery/stationery.service';
 
 
 
  const createOrder = async (req: Request, res: Response) => {
   try {
-            const orderData = req.body.order; 
-    const result = await OrderServices.createOrderIntoDB(orderData);
+    const orderData = req.body; 
+    const inexits=await ProductServices.getSingleProductFromDB(orderData?.product)
+    console.log(orderData);
+            
+    // const result = await OrderServices.createOrderIntoDB(orderData);
 
     res.status(200).json({
       message: 'Order created successfully',
       status: true,
-      data: result,
+      data: inexits,
     });
   } catch (err: any) {
     res.status(500).json({
       message: err.message,
       status: false,
+      err
     });
   }
 };

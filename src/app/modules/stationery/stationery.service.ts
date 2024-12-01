@@ -10,12 +10,26 @@ const getAllProductFromDB = async () => {
   const result = await ProductModel.find();
   return result;
 };
-const getSingleProductFromDB = async (_id: string) => {
-  const result = await ProductModel.findOne({ _id });
+const getSingleProductFromDB = async (productId:string) => {
+  const result = await ProductModel.findOne({ _id:productId });
+  console.log(result,productId);
   return result;
 };
-const deleteProductFromDB = async (_id: string) => {
-  const result = await ProductModel.deleteOne({ _id });
+
+const updateAProductService = async (productId: string, updateData: Product) => {
+  try {
+    const updatedProduct = await ProductModel.findByIdAndUpdate(productId, updateData, {
+      new: true,
+      runValidators: true, // Ensure data validation
+    });
+
+    return updatedProduct;
+  } catch (error) {
+    throw new Error(`Failed to update product: ${error.message}`);
+  }
+};
+const deleteProductFromDB = async (productId:string) => {
+  const result = await ProductModel.deleteOne({ _id:productId });
   return result;
 };
 
@@ -24,4 +38,6 @@ export const ProductServices = {
   getAllProductFromDB,
   getSingleProductFromDB,
   deleteProductFromDB,
+  updateAProductService
+ 
 };

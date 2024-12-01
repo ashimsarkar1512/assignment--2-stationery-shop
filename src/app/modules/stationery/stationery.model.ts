@@ -5,47 +5,40 @@ const productSchema = new Schema<Product>(
   {
     name: {
       type: String,
-      required: [true, 'Product name is required.'],
+      required: [true, 'Product name is required'],
+      trim: true,
     },
     brand: {
       type: String,
-      required: [true, 'Brand name is required.'],
+      required: [true, 'Brand name is required'],
+      trim: true,
     },
     price: {
       type: Number,
-      required: [true, 'Price is required.'],
-      min: [0, 'Price must be a positive number.'],
+      required: [true, 'Price is required'],
+      min: [0, 'Price must be a positive number'],
     },
     category: {
       type: String,
-      enum: {
-        values: [
-          'Writing',
-          'Office Supplies',
-          'Art Supplies',
-          'Educational',
-          'Technology',
-        ],
-        message:
-          '{VALUE} is not a valid category. Please choose a valid category.',
-      },
-      required: [true, 'Category is required.'],
+      required: [true, 'Category is required'],
+      enum: ['Writing', 'Office Supplies', 'Art Supplies', 'Educational', 'Technology'],
     },
     description: {
       type: String,
-      required: [true, 'Product description is required.'],
+      required: [true, 'Description is required'],
     },
     quantity: {
       type: Number,
-      required: [true, 'Quantity is required.'],
-      min: [0, 'Quantity cannot be less than zero.'],
+      required: [true, 'Quantity is required'],
+      min: [0, 'Quantity cannot be negative'],
     },
     inStock: {
       type: Boolean,
-      default: false,
-    },
+      default: true,
+    }
   },
-  { timestamps: true },
-);
+  {
+    timestamps: true,
+  });
 
-export const ProductModel = model<Product>('Product', productSchema);
+export const ProductModel = model<Product>('Product', productSchema,'stationery_products');
