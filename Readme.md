@@ -57,7 +57,7 @@ src/
 ├── app.ts
 ├── server.ts
 
-
+```
 ###🚦 API Endpoints
 
 ## Products
