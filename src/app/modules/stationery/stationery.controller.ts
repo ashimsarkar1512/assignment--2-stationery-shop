@@ -24,8 +24,8 @@ const getAllProducts = async (req: Request, res: Response) => {
   const result = await ProductServices.getAllProductFromDB();
   try {
     res.status(200).json({
-      status: true,
       message: 'Products retrieved successfully',
+      status: true,
       data: result,
     });
   } catch (err) {
@@ -55,7 +55,6 @@ const getSingleProducts = async (req: Request, res: Response) => {
   }
 };
 
-
 const deleteProduct = async (req: Request, res: Response) => {
   try {
     const { productId } = req.params;
@@ -66,14 +65,12 @@ const deleteProduct = async (req: Request, res: Response) => {
         message: 'Product deleted successfully',
         data: {},
       });
-    }
-    else {
+    } else {
       res.status(500).json({
         status: true,
         message: 'Product delete failed',
       });
     }
-
   } catch (err) {
     res.status(500).json({
       message: 'something went wrong',
@@ -87,15 +84,17 @@ const updateProduct = async (req: Request, res: Response) => {
   try {
     const { productId } = req.params;
     const updateData = req.body;
-    const product = await ProductServices.updateAProductService(productId, updateData);
+    const product = await ProductServices.updateAProductService(
+      productId,
+      updateData,
+    );
     if (!product) {
       res.status(404).json({
         message: 'Product not found',
         success: false,
         error: 'Resource not found',
       });
-    }
-    else {
+    } else {
       res.status(200).json({
         message: 'Product updated successfully',
         status: true,
@@ -116,5 +115,5 @@ export const ProductController = {
   getAllProducts,
   getSingleProducts,
   deleteProduct,
-  updateProduct
+  updateProduct,
 };

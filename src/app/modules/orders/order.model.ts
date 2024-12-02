@@ -6,7 +6,6 @@ const orderSchema = new Schema<Order>(
     email: {
       type: String,
       required: [true, 'Email is required'],
-      unique: true,
       trim: true,
       validate: {
         validator: (value: string) => validator.isEmail(value),
@@ -15,13 +14,9 @@ const orderSchema = new Schema<Order>(
     },
 
     product: {
-     type:Types.ObjectId,
-   
-     required:true
-     
-      
+      type: Types.ObjectId,
+      required: true,
     },
-
     quantity: {
       type: Number,
       required: true,
@@ -31,11 +26,12 @@ const orderSchema = new Schema<Order>(
     totalPrice: {
       type: Number,
       required: true,
-      min: [0, 'Total price cannot be negative'],
+      min: [1, 'Total price cannot be negative'],
     },
   },
   {
     timestamps: true,
+    versionKey: false,
   },
 );
 

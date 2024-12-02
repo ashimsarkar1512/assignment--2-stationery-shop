@@ -15,12 +15,19 @@ const getSingleProductFromDB = async (productId: string) => {
   return result;
 };
 
-const updateAProductService = async (productId: string, updateData: Product) => {
+const updateAProductService = async (
+  productId: string,
+  updateData: Product,
+) => {
   try {
-    const updatedProduct = await ProductModel.findByIdAndUpdate(productId, updateData, {
-      new: true,
-      runValidators: true, // Ensure data validation
-    });
+    const updatedProduct = await ProductModel.findByIdAndUpdate(
+      productId,
+      updateData,
+      {
+        new: true,
+        runValidators: true, // Ensure data validation
+      },
+    );
 
     return updatedProduct;
   } catch (error) {
@@ -28,7 +35,10 @@ const updateAProductService = async (productId: string, updateData: Product) => 
   }
 };
 const deleteProductFromDB = async (productId: string) => {
-  const result = await ProductModel.updateOne({ _id: productId }, { isDeleted: true });
+  const result = await ProductModel.updateOne(
+    { _id: productId },
+    { isDeleted: true },
+  );
   return result;
 };
 
@@ -37,6 +47,5 @@ export const ProductServices = {
   getAllProductFromDB,
   getSingleProductFromDB,
   deleteProductFromDB,
-  updateAProductService
-
+  updateAProductService,
 };

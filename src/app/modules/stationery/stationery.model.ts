@@ -21,7 +21,13 @@ const productSchema = new Schema<Product>(
     category: {
       type: String,
       required: [true, 'Category is required'],
-      enum: ['Writing', 'Office Supplies', 'Art Supplies', 'Educational', 'Technology'],
+      enum: [
+        'Writing',
+        'Office Supplies',
+        'Art Supplies',
+        'Educational',
+        'Technology',
+      ],
     },
     description: {
       type: String,
@@ -40,11 +46,12 @@ const productSchema = new Schema<Product>(
       type: Boolean,
       default: false,
       required: false,
-    }
+    },
   },
   {
     timestamps: true,
-    versionKey:false
-  });
+    versionKey: false,
+  },
+);
 
 export const ProductModel = model<Product>('Product', productSchema);
