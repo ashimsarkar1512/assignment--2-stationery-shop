@@ -76,7 +76,7 @@ DELETE /api/products/:id      # Delete product
 
 ## 🛠️ Setup & Installation
 ### Clone the repository
-```bash
+```
 git clone <repository-url>
 cd stationery-shop-api
 
