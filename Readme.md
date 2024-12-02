@@ -159,7 +159,7 @@ Custom error messages: Context-specific errors.
   "stack": "..." // Visible only in development
 }
 
-```
+
 
 ###🧪 Data Validation
 Product schema validation using Zod.
