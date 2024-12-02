@@ -60,6 +60,9 @@ src/
 ```
 ###🚦 API Endpoints
 
+
+
+
 ## Products
 POST   /api/products          # Create a product
 GET    /api/products          # Get all products
@@ -79,38 +82,39 @@ DELETE /api/products/:id      # Delete product
 ```
 git clone <repository-url>
 cd stationery-shop-api
-
+```
 ## Environment Setup
 Create a .env file in the root directory with the following content:
 
-```
+
+## 2.Install dependencies
+
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/stationery-shop
 NODE_ENV=development
-```
 
-##Start the Server
+
+## Start the Server
 #Development
-```
-npm run start:dev
-```
 
-#Production
-```
+npm run start:dev
+
+
+# Production
+
 npm run build
 npm start
-```
 
-###📝 API Documentation
-##Create Product
+
+### 📝 API Documentation
+## Create Product
 POST /api/products
 Headers:
-```
 Content-Type: application/json
 
-```
-###Body:
-```
+
+### Body:
+
 {
   "name": "Notebook",
   "brand": "Moleskine",
@@ -120,25 +124,24 @@ Content-Type: application/json
   "quantity": 200
 }
 
-```
 
-##Place Order
+
+## Place Order
 POST /api/orders
 Headers:
-```
+
 Content-Type: application/json
 
-```
 
 ### Body:
-```
+
 {
   "email": "customer@example.com",
   "product": "product_id_here",
   "quantity": 2
 }
 
-```
+
 
 ###🔒 Error Handling
 The API implements comprehensive error handling mechanisms:
@@ -150,7 +153,7 @@ Custom error messages: Context-specific errors.
 
 ##Example error response:
 
-```
+
 
 {
   "message": "Validation failed",
@@ -161,18 +164,15 @@ Custom error messages: Context-specific errors.
 
 
 
-###🧪 Data Validation
-Product schema validation using Zod.
+### 🧪 Data Validation
 Order validation with business rules.
 Input sanitization and type checking.
 
-###📈 Performance
+### 📈 Performance
 Optimized MongoDB queries.
 Proper indexing of database fields.
-Middleware for common operations to reduce redundancy.
 
-
-###🔐 Security
+### 🔐 Security
 Thorough input validation to prevent injection attacks.
 Sanitized error messages to avoid exposing sensitive information.
 Configured CORS to restrict access from unauthorized origins.
