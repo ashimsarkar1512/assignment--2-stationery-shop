@@ -84,37 +84,40 @@ git clone <repository-url>
 cd stationery-shop-api
 ```
 ## Environment Setup
+```
 Create a .env file in the root directory with the following content:
-
+```
 
 ## 2.Install dependencies
-
+```
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/stationery-shop
 NODE_ENV=development
-
+```
 
 ## Start the Server
+```
 #Development
 
 npm run start:dev
-
+```
 
 # Production
-
+```
 npm run build
 npm start
-
+```
 
 ### 📝 API Documentation
 ## Create Product
+```
 POST /api/products
 Headers:
 Content-Type: application/json
-
+```
 
 ### Body:
-
+```
 {
   "name": "Notebook",
   "brand": "Moleskine",
@@ -123,37 +126,38 @@ Content-Type: application/json
   "description": "A high-quality notebook for professionals.",
   "quantity": 200
 }
-
+```
 
 
 ## Place Order
+```
 POST /api/orders
 Headers:
 
 Content-Type: application/json
-
+```
 
 ### Body:
-
+```
 {
   "email": "customer@example.com",
   "product": "product_id_here",
   "quantity": 2
 }
 
-
+```
 
 ###🔒 Error Handling
-The API implements comprehensive error handling mechanisms:
 
-Validation errors (400): Incorrect or missing input.
-Not found errors (404): Resource not found.
-Server errors (500): Internal server issues.
-Custom error messages: Context-specific errors.
+- The API implements comprehensive error handling mechanisms:
 
-##Example error response:
+- Validation errors (400): Incorrect or missing input.
+- Not found errors (404): Resource not found.
+- Server errors (500): Internal server issues.
+- Custom error messages: Context-specific errors.
 
-
+## Example error response:
+```
 
 {
   "message": "Validation failed",
@@ -161,19 +165,19 @@ Custom error messages: Context-specific errors.
   "error": "ValidationError",
   "stack": "..." // Visible only in development
 }
-
+```
 
 
 ### 🧪 Data Validation
-Order validation with business rules.
-Input sanitization and type checking.
+- Order validation with business rules.
+- Input sanitization and type checking.
 
 ### 📈 Performance
-Optimized MongoDB queries.
-Proper indexing of database fields.
+- Optimized MongoDB queries.
+- Proper indexing of database fields.
 
 ### 🔐 Security
-Thorough input validation to prevent injection attacks.
-Sanitized error messages to avoid exposing sensitive information.
-Configured CORS to restrict access from unauthorized origins.
-Protection of sensitive environment variables.
+- Thorough input validation to prevent injection attacks.
+- Sanitized error messages to avoid exposing sensitive information.
+- Configured CORS to restrict access from unauthorized origins.
+- Protection of sensitive environment variables.
