@@ -1,4 +1,4 @@
-#### 🖊️ Stationery Shop API
+### 🖊️ Stationery Shop API
 
 Effortlessly manage your stationery shop with this powerful REST API, built with Express.js, TypeScript, and MongoDB.
 
@@ -41,19 +41,19 @@ src/
 │   │   └── index.ts
 │   ├── modules/
 │   │   ├── orders/
-│   │   │   ├── order-controller.ts
-│   │   │   ├── order-interface.ts
-│   │   │   ├── order-model.ts
-│   │   │   ├── order-route.ts
-│   │   │   ├── order-service.ts
-│   │   │   └── order-validation.ts
-│   │   ├── products/
-│   │   │   ├── product-controller.ts
-│   │   │   ├── product-interface.ts
-│   │   │   ├── product-model.ts
-│   │   │   ├── product-route.ts
-│   │   │   ├── product-service.ts
-│   │   │   └── product-validation.ts
+│   │   │   ├── order.controller.ts
+│   │   │   ├── order.interface.ts
+│   │   │   ├── order.model.ts
+│   │   │   ├── order.route.ts
+│   │   │   ├── order.service.ts
+│   │   │   
+│   │   ├── stationery/
+│   │   │   ├── stationery.controller.ts
+│   │   │   ├── stationery.interface.ts
+│   │   │   ├── stationery.model.ts
+│   │   │   ├── stationery.route.ts
+│   │   │   ├── stationery.service.ts
+│   │   │   
 ├── app.ts
 ├── server.ts
 
