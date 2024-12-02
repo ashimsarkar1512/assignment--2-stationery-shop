@@ -58,7 +58,7 @@ src/
 ├── server.ts
 
 ```
-###🚦 API Endpoints
+### 🚦 API Endpoints
 
 
 
@@ -96,9 +96,8 @@ NODE_ENV=development
 ```
 
 ## Start the Server
+# Development
 ```
-#Development
-
 npm run start:dev
 ```
 
@@ -112,7 +111,9 @@ npm start
 ## Create Product
 ```
 POST /api/products
-Headers:
+```
+# Headers:
+```
 Content-Type: application/json
 ```
 
@@ -132,8 +133,9 @@ Content-Type: application/json
 ## Place Order
 ```
 POST /api/orders
-Headers:
-
+```
+# Headers:
+```
 Content-Type: application/json
 ```
 
