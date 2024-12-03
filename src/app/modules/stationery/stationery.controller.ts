@@ -28,7 +28,9 @@ const getAllProducts = async (req: Request, res: Response) => {
       status: true,
       data: result,
     });
+  
   } catch (err) {
+    console.log(err);
     res.status(404).json({
       status: false,
       message: 'something went wrong',
@@ -101,7 +103,7 @@ const updateProduct = async (req: Request, res: Response) => {
         data: product,
       });
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     res.status(404).json({
       message: 'Product not found',
       success: false,

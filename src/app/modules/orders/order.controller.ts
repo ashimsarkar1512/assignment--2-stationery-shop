@@ -22,6 +22,7 @@ const createOrder = async (req: Request, res: Response) => {
         data: result,
       });
     }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     res.status(500).json({
       message: err.message,
@@ -38,7 +39,10 @@ const Revenue = async (req: Request, res: Response) => {
       status: true,
       data: totalRevenue,
     });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
+    
     res.status(500).json({
       message: 'Server error while calculating revenue',
       status: false,

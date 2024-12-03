@@ -1,3 +1,7 @@
+### Live Link
+
+assignment-2-stationery-shop-psi.vercel.app
+
 ### 🖊️ Stationery Shop API
 
 Effortlessly manage your stationery shop with this powerful REST API, built with Express.js, TypeScript, and MongoDB.

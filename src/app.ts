@@ -13,7 +13,11 @@ app.use('/api/products', ProductRoutes);
 app.use('/api/orders', orderRoutes);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
+  res.status(200).json({
+      status: true,
+      message: '🚀 Server is up and running smoothly! Ready to handle requests. 🌟',
+  });
 });
+
 
 export default app;

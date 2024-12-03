@@ -31,7 +31,7 @@ const updateAProductService = async (
 
     return updatedProduct;
   } catch (error) {
-    
+    console.log(error);
     // throw new Error(`Failed to update product: ${error.message}`);
   }
 };
