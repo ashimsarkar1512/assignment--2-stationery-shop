@@ -1,5 +1,10 @@
 ### Live Link
 
+The application is live and can be accessed here:
+
+[Live Link](https://assignment-2-stationery-shop-psi.vercel.app/)
+
+
 assignment-2-stationery-shop-psi.vercel.app
 
 ### 🖊️ Stationery Shop API
