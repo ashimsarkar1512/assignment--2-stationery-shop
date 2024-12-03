@@ -16,7 +16,7 @@ Effortlessly manage your stationery shop with this powerful REST API, built with
 ## ✨ Features
 
 ### 🎨 Product Management
-- Add, view, update, or remove products from your inventory.
+- create, read, update, or delete products from your inventory.
 - Search products by name, brand, or category.
 - Monitor stock levels to ensure efficient inventory control.
 
@@ -73,12 +73,13 @@ src/
 
 
 ## Products
+```
 POST   /api/products          # Create a product
 GET    /api/products          # Get all products
 GET    /api/products/:id      # Get product by ID
 PUT    /api/products/:id      # Update product
 DELETE /api/products/:id      # Delete product
-
+```
 ## Orders
 ### Endpoints
 - **POST** `/api/orders` - Create an order.
